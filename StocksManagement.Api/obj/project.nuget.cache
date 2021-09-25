@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "l/7eCyqQsxLw/M1Z2ST/QOUevBqh8NU4mJovVil5lxiS1T3xF9mSK3YnpHTlDuNpB0VRdQYVy4qdu+L5cabiUQ==",
+  "dgSpecHash": "DWtW4qdKjPDmC9zxzQVoDio20RhdxHtfZsvwMsjKJzVFDcTu+JNnTUVxzH7lhkK0QARNt7Uqx9nluHohpl5jLQ==",
   "success": true,
   "projectFilePath": "E:\\git\\Source\\Repos\\StocksManagementAPI\\StocksManagement.Api\\StocksManagement.Api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.2\\swashbuckle.aspnetcore.6.2.2.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.2\\swashbuckle.aspnetcore.swagger.6.2.2.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.2\\swashbuckle.aspnetcore.swaggergen.6.2.2.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.2\\swashbuckle.aspnetcore.swaggerui.6.2.2.nupkg.sha512"
+  ],
   "logs": []
 }
