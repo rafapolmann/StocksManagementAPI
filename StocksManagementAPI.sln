@@ -5,7 +5,19 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Distributed Services", "1. Distributed Services", "{07F5BFD2-67BE-476B-9A7C-0DFB738828AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksManagement.Api", "StocksManagement.Api\StocksManagement.Api.csproj", "{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksManagement.Api", "StocksManagement.Api\StocksManagement.Api.csproj", "{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{07C7038D-8897-482F-AA88-6FAB3354F608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksManagement.Application", "StocksManagement.Application\StocksManagement.Application.csproj", "{DB73E346-A353-454E-A5DC-B77DED85D9D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{2CFF03C2-20AE-45B0-8CDB-5BAF4F36D33A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksManagement.Domain", "StocksManagement.Domain\StocksManagement.Domain.csproj", "{F13366F0-CDE3-4B2E-800C-807CA16CE246}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infraestructure", "4. Infraestructure", "{30C7447F-CB72-44E1-929C-70D0A4A429D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.Infra.EF", "StockManagement.Infra.EF\StockManagement.Infra.EF.csproj", "{9AE91017-D037-4798-9E4A-51A5EEBCBB58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +29,27 @@ Global
 		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB73E346-A353-454E-A5DC-B77DED85D9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB73E346-A353-454E-A5DC-B77DED85D9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB73E346-A353-454E-A5DC-B77DED85D9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB73E346-A353-454E-A5DC-B77DED85D9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13366F0-CDE3-4B2E-800C-807CA16CE246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13366F0-CDE3-4B2E-800C-807CA16CE246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13366F0-CDE3-4B2E-800C-807CA16CE246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13366F0-CDE3-4B2E-800C-807CA16CE246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE91017-D037-4798-9E4A-51A5EEBCBB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE91017-D037-4798-9E4A-51A5EEBCBB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE91017-D037-4798-9E4A-51A5EEBCBB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE91017-D037-4798-9E4A-51A5EEBCBB58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D} = {07F5BFD2-67BE-476B-9A7C-0DFB738828AE}
+		{DB73E346-A353-454E-A5DC-B77DED85D9D3} = {07C7038D-8897-482F-AA88-6FAB3354F608}
+		{F13366F0-CDE3-4B2E-800C-807CA16CE246} = {2CFF03C2-20AE-45B0-8CDB-5BAF4F36D33A}
+		{9AE91017-D037-4798-9E4A-51A5EEBCBB58} = {30C7447F-CB72-44E1-929C-70D0A4A429D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {774B7D35-5E4E-4302-8EAA-FB903263E781}

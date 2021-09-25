@@ -8,4 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StockManagement.Infra.EF\StockManagement.Infra.EF.csproj" />
+    <ProjectReference Include="..\StocksManagement.Application\StocksManagement.Application.csproj" />
+    <ProjectReference Include="..\StocksManagement.Domain\StocksManagement.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StocksManagement.Domain.Features.StockModule;
+using StocksManagement.Domain.Features.StockModule.Interfaces;
+using System.Collections.Generic;
 
 namespace StocksManagement.Api.Controllers
 {
@@ -6,10 +9,16 @@ namespace StocksManagement.Api.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private readonly IStockService _stockService;
+        public StockController(IStockService stockService)
         {
-            return "Hello world!";
+            _stockService = stockService;
+        }
+
+        [HttpGet]
+        public IEnumerable<Stock> Get()
+        {
+            return _stockService.Get();
         }
     }
 }
