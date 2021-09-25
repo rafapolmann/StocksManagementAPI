@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Distributed Services", "1. Distributed Services", "{07F5BFD2-67BE-476B-9A7C-0DFB738828AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksManagement.Api", "StocksManagement.Api\StocksManagement.Api.csproj", "{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ABB5FC54-A239-40DD-9CDB-159FE1C9711D} = {07F5BFD2-67BE-476B-9A7C-0DFB738828AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {774B7D35-5E4E-4302-8EAA-FB903263E781}
+	EndGlobalSection
+EndGlobal
