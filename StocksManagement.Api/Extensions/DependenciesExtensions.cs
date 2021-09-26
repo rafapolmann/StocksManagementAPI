@@ -22,6 +22,8 @@ namespace StocksManagement.Api.Extensions
             {
                 opt.Filters.Add(typeof(ValidatorActionFilter));
             }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(applicationAssembly));
+
+            services.AddAutoMapper(applicationAssembly);
         }
     }
 }
