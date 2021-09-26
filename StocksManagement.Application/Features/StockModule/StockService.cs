@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using StocksManagement.Application.Features.StockModule.Commands;
 using StocksManagement.Application.Features.StockModule.Models;
+using StocksManagement.Domain.Common.ResultModule;
 using StocksManagement.Domain.Features.StockModule;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,14 @@ namespace StocksManagement.Application.Features.StockModule
             _mapper = mapper;
         }
 
-        public int Add(AddStockCommand addStockCommand)
+        public Result<Exception, int> Add(AddStockCommand addStockCommand)
         {
             return _stockRepository.Add(_mapper.Map<Stock>(addStockCommand));
         }
 
-        public IEnumerable<StockModel> Get()
+        public Result<Exception, IEnumerable<StockModel>> Get()
         {
-            return _mapper.Map<IEnumerable<StockModel>>(_stockRepository.RetriveAll());
+            return _mapper.Map<List<StockModel>>(_stockRepository.RetriveAll());
         }
     }
 }
