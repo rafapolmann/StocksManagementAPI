@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StockManagement.Infra.EF.Features.StockModule;
-using StocksManagement.Application;
-using StocksManagement.Domain.Features.StockModule.Interfaces;
+using StocksManagement.Application.Features.StockModule;
+using StocksManagement.Domain.Features.StockModule;
 
 namespace StocksManagement.Api.Extensions
 {

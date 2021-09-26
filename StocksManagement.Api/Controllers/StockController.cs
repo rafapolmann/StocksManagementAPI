@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StocksManagement.Domain.Features.StockModule;
-using StocksManagement.Domain.Features.StockModule.Interfaces;
+using StocksManagement.Application.Features.StockModule;
+using StocksManagement.Application.Features.StockModule.Models;
+using StocksManagement.Application.Features.StockModule.Commands;
 using System.Collections.Generic;
 
 namespace StocksManagement.Api.Controllers
@@ -16,9 +17,15 @@ namespace StocksManagement.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Stock> Get()
+        public IActionResult Get()
         {
-            return _stockService.Get();
+            return Ok(_stockService.Get());
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] AddStockCommand addStockCommand)
+        {
+            return Ok(_stockService.Add(addStockCommand));
         }
     }
 }

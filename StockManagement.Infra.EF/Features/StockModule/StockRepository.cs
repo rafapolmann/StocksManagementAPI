@@ -1,5 +1,4 @@
 ﻿using StocksManagement.Domain.Features.StockModule;
-using StocksManagement.Domain.Features.StockModule.Interfaces;
 using System.Collections.Generic;
 
 namespace StockManagement.Infra.EF.Features.StockModule

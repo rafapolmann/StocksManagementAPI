@@ -1,8 +1,9 @@
-﻿using StocksManagement.Domain.Features.StockModule;
-using StocksManagement.Domain.Features.StockModule.Interfaces;
+﻿using StocksManagement.Application.Features.StockModule.Commands;
+using StocksManagement.Application.Features.StockModule.Models;
+using StocksManagement.Domain.Features.StockModule;
 using System.Collections.Generic;
 
-namespace StocksManagement.Application
+namespace StocksManagement.Application.Features.StockModule
 {
     public class StockService : IStockService
     {
@@ -12,9 +13,34 @@ namespace StocksManagement.Application
             _stockRepository = stockRepository;
         }
 
-        public IEnumerable<Stock> Get()
+        public bool Add(AddStockCommand addStockCommand)
         {
-            return _stockRepository.RetriveAll();            
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<StockModel> Get()
+        {
+            return ParseStocks(_stockRepository.RetriveAll());
+        }
+
+        private IEnumerable<StockModel> ParseStocks(IEnumerable<Stock> stocksOnRepository)
+        {
+            List<StockModel> stocks = new();
+
+            foreach (Stock stockInRepository in stocksOnRepository)
+                stocks.Add(ParseStock(stockInRepository));
+
+            return stocks;
+        }
+
+        private StockModel ParseStock(Stock stockInRepository)
+        {
+            return new StockModel
+            {
+                Name = stockInRepository.Name,
+                Code = stockInRepository.Code,
+                CurrentValue = stockInRepository.CurrentValue
+            };
         }
     }
 }
