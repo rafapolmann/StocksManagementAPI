@@ -1,6 +1,7 @@
 ﻿using StocksManagement.Application.Features.StockModule.Commands;
 using StocksManagement.Application.Features.StockModule.Models;
 using StocksManagement.Domain.Features.StockModule;
+using System;
 using System.Collections.Generic;
 
 namespace StocksManagement.Application.Features.StockModule
@@ -13,14 +14,24 @@ namespace StocksManagement.Application.Features.StockModule
             _stockRepository = stockRepository;
         }
 
-        public bool Add(AddStockCommand addStockCommand)
+        public int Add(AddStockCommand addStockCommand)
         {
-            throw new System.NotImplementedException();
+            return _stockRepository.Add(ParseAddStockCommand(addStockCommand));
         }
 
         public IEnumerable<StockModel> Get()
         {
             return ParseStocks(_stockRepository.RetriveAll());
+        }
+
+        private Stock ParseAddStockCommand(AddStockCommand addStockCommand)
+        {
+            return new Stock
+            {
+                Name = addStockCommand.Name,
+                Code = addStockCommand.Code,
+                CurrentValue = addStockCommand.CurrentValue
+            };
         }
 
         private IEnumerable<StockModel> ParseStocks(IEnumerable<Stock> stocksOnRepository)
@@ -37,6 +48,7 @@ namespace StocksManagement.Application.Features.StockModule
         {
             return new StockModel
             {
+                Id = stockInRepository.Id,
                 Name = stockInRepository.Name,
                 Code = stockInRepository.Code,
                 CurrentValue = stockInRepository.CurrentValue

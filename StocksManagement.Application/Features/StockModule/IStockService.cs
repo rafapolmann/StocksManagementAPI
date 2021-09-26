@@ -6,7 +6,7 @@ namespace StocksManagement.Application.Features.StockModule
 {
     public interface IStockService
     {
-        bool Add(AddStockCommand addStockCommand);
+        int Add(AddStockCommand addStockCommand);
         IEnumerable<StockModel> Get();
     }
 }

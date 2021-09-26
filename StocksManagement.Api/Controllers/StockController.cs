@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StocksManagement.Application.Features.StockModule;
-using StocksManagement.Application.Features.StockModule.Models;
 using StocksManagement.Application.Features.StockModule.Commands;
-using System.Collections.Generic;
 
 namespace StocksManagement.Api.Controllers
 {
