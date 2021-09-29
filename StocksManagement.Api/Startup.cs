@@ -27,7 +27,7 @@ namespace StocksManagement.Api
 
             services.AddDependencies(Configuration);
             services.AddCorsPolicy();
-           // services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Estudo.Api", Version = "v1" });
