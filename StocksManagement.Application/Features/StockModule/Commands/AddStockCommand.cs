@@ -1,8 +1,11 @@
 ﻿using FluentValidation;
+using MediatR;
+using StocksManagement.Domain.Common.ResultModule;
+using System;
 
 namespace StocksManagement.Application.Features.StockModule.Commands
 {
-    public class AddStockCommand
+    public class AddStockCommand : IRequest<Result<Exception, int>>
     {
         public string Name { get; set; }
         public string Code { get; set; }

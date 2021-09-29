@@ -1,4 +1,5 @@
 ﻿using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StockManagement.Infra.EF.Features.StockModule;
@@ -14,7 +15,6 @@ namespace StocksManagement.Api.Extensions
     {
         public static void AddDependencies(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IStockService, StockService>();
             services.AddScoped<IStockRepository, StockRepository>();
 
             Assembly applicationAssembly = typeof(AppModule).Assembly;
@@ -24,6 +24,7 @@ namespace StocksManagement.Api.Extensions
             }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(applicationAssembly));
 
             services.AddAutoMapper(applicationAssembly);
+            services.AddMediatR(applicationAssembly);
         }
     }
 }

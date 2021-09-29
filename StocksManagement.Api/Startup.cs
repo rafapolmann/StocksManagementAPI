@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,8 +20,14 @@ namespace StocksManagement.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDependencies(Configuration);            
-            services.AddControllers();
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
+            services.AddDependencies(Configuration);
+            services.AddCorsPolicy();
+           // services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Estudo.Api", Version = "v1" });
@@ -36,8 +43,11 @@ namespace StocksManagement.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "StocksManagement.Api"));
             }
 
+            app.UseCorsPolicy();
+            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

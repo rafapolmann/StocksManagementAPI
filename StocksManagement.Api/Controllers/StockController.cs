@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using StocksManagement.Api.Base;
-using StocksManagement.Application.Features.StockModule;
 using StocksManagement.Application.Features.StockModule.Commands;
+using StocksManagement.Application.Features.StockModule.Queries;
+using System.Threading.Tasks;
 
 namespace StocksManagement.Api.Controllers
 {
@@ -9,22 +11,31 @@ namespace StocksManagement.Api.Controllers
     [ApiController]
     public class StockController : ApiControllerBase
     {
-        private readonly IStockService _stockService;
-        public StockController(IStockService stockService)
+        private readonly IMediator _mediator;
+        public StockController(IMediator mediator)
         {
-            _stockService = stockService;
+            _mediator = mediator;
         }
 
+        // GET: api/<StockController>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return HandleResult(_stockService.Get());
+            return HandleResult(await _mediator.Send(new AllStockQuery()));
         }
 
+        // GET api/<StockController>/5
+        //[HttpGet("{id}")]
+        //public IActionResult Get(int id)
+        //{
+        //    return HandleResult(_stockService.Get(id));
+        //}
+
+        // POST api/<StockController>
         [HttpPost]
-        public IActionResult Post([FromBody] AddStockCommand addStockCommand)
+        public async Task<IActionResult> Post([FromBody] AddStockCommand addStockCommand)
         {
-            return HandleResult(_stockService.Add(addStockCommand));
+            return HandleResult(await _mediator.Send(addStockCommand));
         }
     }
 }
