@@ -31,6 +31,11 @@ namespace StockManagement.Infra.EF.Features.StockModule
             return stockToAdd.Id;
         }
 
+        public Stock Retrive(int stockId)
+        {
+            return _repository.Find(s => s.Id.Equals(stockId));
+        }
+
         public IEnumerable<Stock> RetriveAll()
         {
             return _repository;

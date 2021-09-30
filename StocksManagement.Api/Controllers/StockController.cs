@@ -24,12 +24,12 @@ namespace StocksManagement.Api.Controllers
             return HandleResult(await _mediator.Send(new AllStockQuery()));
         }
 
-        // GET api/<StockController>/5
-        //[HttpGet("{id}")]
-        //public IActionResult Get(int id)
-        //{
-        //    return HandleResult(_stockService.Get(id));
-        //}
+        //GET api/<StockController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return HandleResult(await _mediator.Send(new StockIdQuery(id)));
+        }
 
         // POST api/<StockController>
         [HttpPost]
